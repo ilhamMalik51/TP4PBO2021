@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/9e7eea5885.js" crossorigin="anonymous"></script>
+    <title>List Koleksi Sepatu</title>
+
+    <style>
+        footer {
+            background-color: #f2f2f2;
+            padding: 15px;
+            margin-top: 50px;
+        }
+
+        ul {
+            list-style: none;
+        }
+        
+        input[type="file"]{
+           display: none;
+        }
+
+        .file-upload-img {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: inline-block;
+            padding: 6px 12px;
+            cursor: pointer;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .img-container {
+            width: 200px;
+            min-height: 200px;
+            max-height: auto;
+            float: left;
+            margin: 3px;
+            padding: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Bagian navigasi yang berwarna hitam -->
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="#" class="navbar-brand">List Koleksi Sepatu</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1>List Koleksi Sepatu</h1>
+            <p>Web List koleksi sepatu ini adalah sebuah web yang dapat melakukan operasi create, read, update, dan delete.
+                Untuk menambahkan sepatu cukup tekan tombol <mark>Insert.</mark> Untuk menghapus sebuah sepatu cukup menekan tombol <mark>Hapus.</mark>
+                Untuk menandai sebuah sepatu rusak cukup menekan tombol <mark>Rusak.</mark>
+            </p>
+        </div>
+    </div>
+
+    <div class="container">
+        <table class="table">
+            <tr>
+                <th>Foto Sepatu</th>
+                <th>Deskripsi Sepatu</th>
+                <th>Keterangan</th>
+            </tr>
+            
+            DATA_TABEL
+        </table>
+    </div>
+
+    <div class="container">
+        <h2>Form SepatuMU!</h2>
+        <form action="" class="form-horizontal" method="POST" enctype="multipart/form-data">
+            <!-- Untuk input nama sepatu -->
+            <div class="form-group">
+                <label for="namasepatu" class="control-label col-md-2">Nama Sepatu:</label>
+                <div class="col-md-4">
+                    <input type="text" name="tname" id="tname" class="form-control" required>
+                </div>
+            </div>
+
+            <!-- Untuk input merk sepatu -->
+            <div class="form-group">
+                <label for="merksepatu" class="control-label col-md-2">Merk Sepatu:</label>
+                <div class="col-md-4">
+                    <input type="text" name="tmerk" id="tmerk" class="form-control" required>
+                </div>
+            </div>
+
+            <!-- Untuk input jenis sepatu -->
+            <div class="form-group">
+                <label for="" class="control-label col-md-2">Jenis Sepatu:</label>
+                <div class="col-md-7">
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio" value="Sneakers" checked>Sneakers
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio" value="Sepatu Lari">Sepatu Lari
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio" value="Sepatu Basket">Sepatu Basket
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio" value="Sepatu Umum">Sepatu Umum
+                    </label>
+                </div>
+            </div>
+
+            <!-- Untuk input deskripsi sepatu -->
+            <div class="form-group">
+                <label for="" class="control-label col-md-2">Deskripsi:</label>
+                <div class="col-md-4">
+                    <textarea name="tdeskripsi" id="tdeskripsi" cols="30" rows="5" class="form-control" required></textarea>
+                </div>
+            </div>
+
+            <!-- Untuk input upload foto dari sepatu -->
+            <div class="form-group">
+                <label for="" class="control-label col-md-2">Foto Sepatu:</label>
+                <div class="col-md-4">
+                    <label for="file-upload" class="file-upload-img">
+                        <i class="fa fa-cloud-upload"></i> Image Upload
+                    </label>
+                    <input name="file-upload" id="file-upload" type="file" required/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-2"></div>
+                <div class="col-md-4">
+                    <button name="insert" type="submit" class="btn btn-info btn-lg">Insert</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <footer class="container-fluid text-center">
+        <h3>Koleksi Sepatu 2021</h3>
+    </footer>
+</body>
+</html>
